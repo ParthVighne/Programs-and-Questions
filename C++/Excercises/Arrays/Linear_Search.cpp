@@ -8,15 +8,15 @@ int main()
     cin >> n;
     int arr[n];
     cout << endl;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) //Entering elements
     {
         cout << "\nEnter element no. " << i + 1 << " : ";
         cin >> arr[i];
     }
     int element;
-    cout << "\nEnter element to search : ";
+    cout << "\nEnter element to search : "; // Enter item to be searched
     cin >> element;
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i <= n; i++) //Searching algorithm
     {
         if (element == arr[i])
         {

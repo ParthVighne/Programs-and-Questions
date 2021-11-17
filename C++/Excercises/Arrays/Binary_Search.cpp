@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int BinarySearch(int arr[], int n, int element)
+int BinarySearch(int arr[], int n, int element) //Searching algorithm as function
 {
     int start = 0, end = n;
     while (start <= end) //Sorting
@@ -23,6 +23,7 @@ int BinarySearch(int arr[], int n, int element)
     }
     return -1;
 }
+
 int main()
 {
     int n;
