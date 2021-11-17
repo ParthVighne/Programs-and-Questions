@@ -1,2 +1,5 @@
 # CPP
-All my C++ exercises &amp; questions
+
+All my C++ exercises and questions.
+
+    :)
