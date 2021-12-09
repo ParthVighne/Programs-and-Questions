@@ -1,0 +1,36 @@
+Object Oriented Programming (OOP's)
+
+Object-Oriented Programming is a method of implementation in which programmes are organised as 
+cooperative collection collections oof objects, each of which represents an instance of some class, 
+and whose classes are all members of a heirarchyof classes united via inheritance realtionship.
+
+How OOP's Overcome Procedural Paradigm's Problems 
+ > its emphasis on procedures rather than data
+ > Need for propagating updates and
+ > not able to model real world well
+
+
+
+ Basic Concepts Of OOP
+
+ 1) Data Abstraction
+    Abstraction is the concept of simplifying a real world concept into its essential elements. 
+    Basically, you know only the essential things to operate.
+
+2) Encapsulation
+    Most fundamental concept of OOP. It is the way of combining both the data and the functions that 
+    operate on that data under a single unit.
+
+3) Modularity
+    Partitioning a program into individual components.
+    ->it reduces complexity 
+    ->it creates a number of well-defined, documented boundaries withini the program.
+
+4) Inheritance
+    Inheritance is the capability of one class of things to inherit capabilities or properties from another
+    class.
+    
+5) Polymorphism
+    Polymorphism is the ability for a message or data to be processed in more than one way.
+    Polymorphism is a property by which the same message can be sent to objects of several different classes,
+    and each object can respond in a different way depending on its class.
