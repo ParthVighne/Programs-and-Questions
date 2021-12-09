@@ -1,5 +1,7 @@
 // A function is called within the same function, it is called recursion.
 // The function which calls the same function, is known as a recursive function.
+// ! Not always good, gives a lot of overhead i.e that the same function is called for multiple times.
+// ! Use iterative approach instead if too much recursion. :)
 
 #include <iostream>
 using namespace std;
