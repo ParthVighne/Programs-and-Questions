@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
-    cout << "Hello Jindagi ! ";
-
+    cout << "Hello World.";
     return 0;
 }
