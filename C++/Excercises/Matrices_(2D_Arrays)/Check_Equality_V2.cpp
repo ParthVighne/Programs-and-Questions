@@ -4,8 +4,6 @@ using namespace std;
 
 const int MAX = 3;
 
-// int rows, columns;
-
 class matrices
 {
     int matrix[MAX][MAX];
