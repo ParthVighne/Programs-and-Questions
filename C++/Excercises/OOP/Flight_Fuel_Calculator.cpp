@@ -22,6 +22,7 @@ class Flight
 public:
     void Feed_Info();
     void Calc_Fuel();
+    void Show_Info();
 };
 
 void Flight ::Feed_Info()
@@ -43,7 +44,16 @@ void Flight::Calc_Fuel()
     else
         Fuel = 2200;
 
-    cout << "\nAmount of fuel required : " << Fuel << " kilograms";
+    // cout << "\nAmount of fuel required : " << Fuel << " kilograms";
+}
+
+void Flight::Show_Info()
+{
+    cout << "\n --------Displaying--------\n";
+    cout << "\n Flight Number : " << FlightNumber;
+    cout << "\n Destination : " << Destination;
+    cout << "\n Distance : " << Distance;
+    cout << "\n Fuel : " << Fuel;
 }
 
 int main()
@@ -51,5 +61,6 @@ int main()
     Flight A;
     A.Feed_Info();
     A.Calc_Fuel();
+    A.Show_Info();
     return 0;
 }
