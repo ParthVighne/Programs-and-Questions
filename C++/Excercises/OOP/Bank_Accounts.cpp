@@ -18,6 +18,7 @@ public:
 
 void BankAccount ::enter()
 {
+    cout << "\n********** Enter Data **********";
     cout << "\nEnter Name : ";
     getline(cin, depositor_name);
     cout << "\nEnter Account number : ";
@@ -30,6 +31,7 @@ void BankAccount ::enter()
 
 void BankAccount::display()
 {
+    cout << "\n********** Displaying Data **********";
     cout << "\nName : " << depositor_name;
     cout << "\nAccount Number : " << account_number;
     cout << "\nTime Period : " << time_period;
@@ -47,8 +49,11 @@ void BankAccount::withdrawl_determiner()
 
 int main()
 {
-    BankAccount accounts[10];
-    for (int i = 0; i < 10; i++)
+    int n;
+    cout << "\nEnter number of accounts : ";
+    cin >> n;
+    BankAccount accounts[n];
+    for (int i = 0; i < n; i++)
     {
         accounts[i].enter();
         accounts[i].display();
