@@ -2,6 +2,9 @@
 
 int main()
 {
-    printf("\nHello World.");
+    int length = 55;
+    int breadth = 22;
+    int area = length * breadth;
+    printf("Area : %d", area);
     return 0;
 }
