@@ -14,6 +14,7 @@ using namespace std;
 class SimpleCalculator;
 class ScientificCalculator;
 class HybridCalculator;
+void MainMenu(HybridCalculator);
 
 int factorial(int n) //Friend Function
 {
@@ -122,7 +123,7 @@ public:
         cin >> num1;
         cout << "\nEnter number of permutations : ";
         cin >> num2;
-        res = (factorial(num1) / factorial(num1 - num2));
+        res = (factorial(num1) / (factorial(num1 - num2)));
         showScientificCalc();
     }
 
@@ -167,11 +168,11 @@ void MainMenu(HybridCalculator A)
     bool ans = true;
     while (ans)
     {
-        cout << "\nSelect Calculator ( Simple(s), Scientific(p) or exit(e)) : ";
+        cout << "\nSelect Calculator ( Simple(s), Scientific(p) or exit(press any key)) : ";
         cin >> Select_Calculator;
         switch (Select_Calculator)
         {
-        case 's':
+        case 's': //Sub-Menu For Simple Calculator
         {
             // SimpCalc(A);
             char operation;
@@ -207,7 +208,8 @@ void MainMenu(HybridCalculator A)
             }
             break;
         }
-        case 'p':
+
+        case 'p': //Sub-Menu For Scientific Calculator
         {
             // SciCalc(A);
             char operation;
@@ -243,13 +245,12 @@ void MainMenu(HybridCalculator A)
             }
             break;
         }
-        case 'e':
+
+        default: //Exit
         {
             ans = false;
             break;
         }
-        default:
-            cout << "\nInvalid input !";
         }
     }
 }
@@ -258,6 +259,5 @@ int main()
 {
     HybridCalculator H1;
     MainMenu(H1);
-
     return 0;
 }
