@@ -9,39 +9,50 @@ struct address
      char city[30];
      char state[40];
      char country[40];
+     void getData();
+     void display();
 };
+
+void address ::getData()
+{
+     cout << "\nEnter house number : ";
+     cin >> HouseNumber;
+     cout << "\nEnter street : ";
+     cin >> street;
+     cout << "\nEnter city : ";
+     cin >> city;
+     cout << "\nEnter statr : ";
+     cin >> state;
+     cout << "\nEnter country : ";
+     cin >> country;
+     cout << endl
+          << "-------------";
+}
+
+void address ::display()
+{
+     cout << "\n\t        DISPLAYING INFORMATION\n";
+     cout << endl
+          << "House Number : "
+          << HouseNumber;
+     cout << endl
+          << "Street :  "
+          << street;
+     cout << endl
+          << "city : "
+          << city;
+     cout << endl
+          << "state : "
+          << state;
+     cout << endl
+          << "country : "
+          << country;
+}
 
 int main()
 {
      struct address Parth;
-     cout << "\nEnter house number : ";
-     cin >> Parth.HouseNumber;
-     cout << "\nEnter street : ";
-     cin >> Parth.street;
-     cout << "\nEnter city : ";
-     cin >> Parth.city;
-     cout << "\nEnter statr : ";
-     cin >> Parth.state;
-     cout << "\nEnter country : ";
-     cin >> Parth.country;
-     cout << endl
-          << "-------------\n";
-     cout << "DISPLAYING INFORMATION :\n";
-     cout << endl
-          << "House Number : "
-          << Parth.HouseNumber;
-     cout << endl
-          << "Street :  "
-          << Parth.street;
-     cout << endl
-          << "city : "
-          << Parth.city;
-     cout << endl
-          << "state : "
-          << Parth.state;
-     cout << endl
-          << "country : "
-          << Parth.country;
-
+     Parth.getData();
+     Parth.display();
      return 0;
 }
