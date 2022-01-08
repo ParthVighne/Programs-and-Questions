@@ -31,8 +31,8 @@ int main()
 
     // Display
 
-    ifstream file_in;            //declaring object for reading
-    file_in.open("Student.txt"); //opening document
+    ifstream file_in;                      //declaring object for reading
+    file_in.open("Student.txt", ios::out); //opening document
 
     cout << "\n - - - - - - - D I S P L Y I N G - - - - - - -\n";
     while (file_in.eof() == 0)
