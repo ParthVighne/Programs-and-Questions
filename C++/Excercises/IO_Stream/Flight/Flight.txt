@@ -1,0 +1,10 @@
+Flight number : 1
+Passenger Name : parth
+Flight from : bhopal
+Flight to : indore
+
+Flight number : 2
+Passenger Name : nikshay
+Flight from : bopal
+Flight to : loda
+
