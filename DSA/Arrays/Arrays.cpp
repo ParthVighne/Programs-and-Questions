@@ -31,14 +31,14 @@ void insertElement(int arr[], int &size, int capacity) // inserting element
         cin >> answer;
         if (answer == 'n') // checking if user wants to add element at the end of the array
         {
-            cout << "\nEnter index : ";
+            cout << "\nEnter index : "; //entering index
             cin >> index;
-            for (int i = size; i >= index; i--)
+            for (int i = size; i >= index; i--) // shifting element up by 1 index
             {
                 arr[i + 1] = arr[i];
             }
-            arr[index] = element;
-            size++;
+            arr[index] = element; // when i reaches to desired index, assign value
+            size++; // size will globally update cuz of call by reference 
         }
         else
         {
@@ -59,7 +59,7 @@ void deleteElement(int arr[], int &size) // delete element
     {
         cout << "\nEnter element index to delete : ";
         cin >> index;
-        for (int i = index; i <= size; i++)
+        for (int i = index; i <= size; i++) //starting from the desired index each element afer will back up 1 index.
         {
             arr[i] = arr[i + 1];
         }
@@ -69,12 +69,10 @@ void deleteElement(int arr[], int &size) // delete element
 
 int main()
 {
-    int size, capacity;
-    cout << "\nEnter capacity : ";
-    cin >> capacity;
-    cout << "\nEnter size : ";
+    int size;
+    cout << "\nEnter size (max capacity 20) : ";
     cin >> size;
-    int array[capacity];
+    int array[20];
     for (int i = 0; i < size; i++)
     {
         cout << "\nEnter value of element #" << i << " : ";
@@ -90,19 +88,19 @@ int main()
         {
         case '1':
         {
-            display(array, size, capacity);
+            display(array, size, 20);
             break;
         }
         case '2':
         {
-            insertElement(array, size, capacity);
-            display(array, size, capacity);
+            insertElement(array, size, 20);
+            display(array, size, 20);
             break;
         }
         case '3':
         {
             deleteElement(array, size);
-            display(array, size, capacity);
+            display(array, size, 20);
             break;
         }
         default:
