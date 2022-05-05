@@ -4,6 +4,7 @@
     "*.tcc": "cpp",
     "ostream": "cpp",
     "TestProject.C": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "stdio.h": "c"
   }
 }
