@@ -6,5 +6,6 @@
     "TestProject.C": "cpp",
     "new": "cpp",
     "stdio.h": "c"
-  }
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
