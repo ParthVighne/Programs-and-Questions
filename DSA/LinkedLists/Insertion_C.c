@@ -21,17 +21,17 @@ void traverseList(struct Node *ptr)
 
 struct Node *insertAtFirst(struct Node *head, int data)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node *)); // dynamically creating and allocating memory for new node
-    ptr->data = data;                                                // assigning value to new node
-    ptr->next = head;                                                // linking new node i.e now ptr points to head
-    return ptr;                                                      // returns ptr so that new head becomes
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node)); // dynamically creating and allocating memory for new node
+    ptr->data = data;                                              // assigning value to new node
+    ptr->next = head;                                              // linking new node i.e now ptr points to head
+    return ptr;                                                    // returns ptr so that new head becomes
 }
 
 // Insertion In Between
 
 struct Node *insertInBetween(struct Node *head, int data, int index)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     int i = 0;
 
     struct Node *p = head;
@@ -51,9 +51,9 @@ struct Node *insertInBetween(struct Node *head, int data, int index)
 
 struct Node *insertAtEnd(struct Node *head, int data)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node *)); // new node
-    struct Node *p = head;                                           // temporary node
-    while (p->next != NULL)                                          // traverse temporary node links till it reaches null
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node)); // new node
+    struct Node *p = head;                                         // temporary node
+    while (p->next != NULL)                                        // traverse temporary node links till it reaches null
     {
         p = p->next;
     }
@@ -66,7 +66,7 @@ struct Node *insertAtEnd(struct Node *head, int data)
 // Insert After a given node ( only works if node is defined in main())
 struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data = data;
     ptr->next = prevNode->next;
     prevNode->next = ptr;
@@ -82,10 +82,10 @@ int main()
     struct Node *third;
 
     // allocating memory
-    head = (struct Node *)malloc(sizeof(struct Node *));
-    first = (struct Node *)malloc(sizeof(struct Node *));
-    second = (struct Node *)malloc(sizeof(struct Node *));
-    third = (struct Node *)malloc(sizeof(struct Node *));
+    head = (struct Node *)malloc(sizeof(struct Node));
+    first = (struct Node *)malloc(sizeof(struct Node));
+    second = (struct Node *)malloc(sizeof(struct Node));
+    third = (struct Node *)malloc(sizeof(struct Node));
 
     // giving value
     head->data = 0;

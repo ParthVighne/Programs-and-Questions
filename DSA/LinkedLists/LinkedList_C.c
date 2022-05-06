@@ -21,11 +21,11 @@ struct Node *deleteAtValue(struct Node *head, int value); // Delete element havi
 
 int main()
 {
-    // Dynamically initialize nodes and allocate memory
-    struct Node *head = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *first = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *second = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *third = (struct Node *)malloc(sizeof(struct Node *));
+    // Dyamically initialize nodes and allocate memory
+    struct Node *head = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *first = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *second = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *third = (struct Node *)malloc(sizeof(struct Node));
 
     // Giving values to nodes
     head->data = 0;
@@ -75,7 +75,7 @@ void traverse(struct Node *head)
 
 struct Node *insertFirst(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = head;
     traverse(newNode);
@@ -84,7 +84,7 @@ struct Node *insertFirst(struct Node *head, int data)
 
 struct Node *insertAtEnd(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     struct Node *ptr = head;
     while (ptr->next != NULL)
@@ -99,7 +99,7 @@ struct Node *insertAtEnd(struct Node *head, int data)
 
 struct Node *insertInBetween(struct Node *head, int data, int index)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     struct Node *ptr = head;
     int i = 0;
     while (i != index - 1)
@@ -116,7 +116,7 @@ struct Node *insertInBetween(struct Node *head, int data, int index)
 
 struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = prevNode->next;
     prevNode->next = newNode;

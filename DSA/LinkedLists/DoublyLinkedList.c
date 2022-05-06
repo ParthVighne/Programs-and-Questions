@@ -14,7 +14,7 @@ void traverseInReverse(struct Node *head);
 
 struct Node *insertAtFirst(struct Node *head, int data);
 
-struct Node *insertAtEnd(struct Node *head, int data); // TODO
+struct Node *insertAtEnd(struct Node *head, int data); // TOD
 
 struct Node *insertAtIndex(struct Node *head, int index, int data);
 
@@ -32,10 +32,10 @@ struct Node *deleteAtValue(struct Node *head, int value);
 
 int main()
 {
-    struct Node *head = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *first = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *second = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *third = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *head = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *first = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *second = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *third = (struct Node *)malloc(sizeof(struct Node));
 
     head->data = 0;
     first->data = 1;
@@ -95,7 +95,7 @@ void traverseInReverse(struct Node *head)
 
 struct Node *insertAtFirst(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->prev = NULL;
     newNode->next = head;
@@ -105,7 +105,7 @@ struct Node *insertAtFirst(struct Node *head, int data)
 
 struct Node *insertAtEnd(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     struct Node *ptr = head;
     while (ptr->next != NULL)
@@ -119,7 +119,7 @@ struct Node *insertAtEnd(struct Node *head, int data)
 
 struct Node *insertAtIndex(struct Node *head, int index, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     struct Node *ptr = head;
     newNode->data = data;
     int i = 0;
@@ -136,7 +136,7 @@ struct Node *insertAtIndex(struct Node *head, int index, int data)
 
 struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = prevNode->next;
     prevNode->next = newNode;
@@ -146,7 +146,7 @@ struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 
 struct Node *insertBefore(struct Node *head, struct Node *afterNode, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = afterNode;
     newNode->prev = afterNode->prev;

@@ -27,10 +27,10 @@ struct Node *deleteAtValue(struct Node *head, int value);
 
 int main()
 {
-    struct Node *head = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *first = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *second = (struct Node *)malloc(sizeof(struct Node *));
-    struct Node *third = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *head = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *first = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *second = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *third = (struct Node *)malloc(sizeof(struct Node));
 
     head->data = 0;
     first->data = 1;
@@ -70,7 +70,7 @@ void traverse(struct Node *head)
 
 struct Node *insertAtStart(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
 
     struct Node *ptr = head->next;
@@ -86,7 +86,7 @@ struct Node *insertAtStart(struct Node *head, int data)
 struct Node *insertAtEnd(struct Node *head, int data)
 {
     // same as insertAtStart() , just return head instead of newNode ;)
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
 
     struct Node *ptr = head->next;
@@ -102,7 +102,7 @@ struct Node *insertAtEnd(struct Node *head, int data)
 
 struct Node *insertBetween(struct Node *head, int data, int index)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     struct Node *ptr = head;
     int i = 0;
@@ -118,7 +118,7 @@ struct Node *insertBetween(struct Node *head, int data, int index)
 
 struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node *));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = prevNode->next;
     prevNode->next = newNode;
