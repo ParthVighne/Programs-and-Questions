@@ -13,6 +13,9 @@ int isFull(struct stack *s);
 void traverse(struct stack *s);
 void push(struct stack *s, int value);
 int pop(struct stack *s);
+void seek(struct stack *s, int pos);
+void stackTop(struct stack *s);
+void stackBottom(struct stack *s);
 
 int main()
 {
@@ -20,17 +23,19 @@ int main()
     s1->size = 10;
     s1->top = -1;
     s1->arr = (int *)malloc(s1->size * sizeof(int));
-    traverse(s1);
+    // traverse(s1);
     push(s1, 1);
     push(s1, 2);
     push(s1, 3);
     push(s1, 4);
     push(s1, 5);
     traverse(s1);
-    pop(s1);
-    pop(s1);
-    pop(s1);
-    traverse(s1);
+    // pop(s1);
+    // pop(s1);
+    // pop(s1);
+    // traverse(s1);
+    // seek(s1, 3);
+    stackBottom(s1);
 
     return 0;
 }
@@ -64,7 +69,7 @@ void traverse(struct stack *s)
     printf("\n - - - - - - Dispalying - - - - - -\n");
     if (isEmpty(s))
     {
-        printf("Stack Underflow");
+        printf("Stack Empty");
     }
     else
     {
@@ -101,4 +106,26 @@ int pop(struct stack *s)
         s->top--;
         return val;
     }
+}
+
+void seek(struct stack *s, int pos)
+{
+    if ((s->top - pos + 1) < 0)
+    {
+        printf("\nPosition does not exist.");
+    }
+    else
+    {
+        printf("\nElement at position %d is %d", pos, s->arr[s->top - pos + 1]);
+    }
+}
+
+void stackTop(struct stack *s)
+{
+    printf("\nElement on top of stack is %d", s->arr[s->top]);
+}
+
+void stackBottom(struct stack *s)
+{
+    printf("\nElement at the bottom of stack is %d", s->arr[0]);
 }
