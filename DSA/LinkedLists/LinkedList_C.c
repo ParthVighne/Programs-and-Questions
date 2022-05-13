@@ -75,51 +75,51 @@ void traverse(struct Node *head)
 
 struct Node *insertFirst(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = head;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node)); // initialize new node
+    newNode->data = data;                                              // give data to new node
+    newNode->next = head;                                              // point new node to current head(first node)
     traverse(newNode);
-    return newNode;
+    return newNode; // return new node so, head is now new node
 }
 
 struct Node *insertAtEnd(struct Node *head, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = data;
-    struct Node *ptr = head;
-    while (ptr->next != NULL)
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node)); // initialize new node
+    newNode->data = data;                                              // give data to new node
+    struct Node *ptr = head;                                           // pointer that points to head ( first node )
+    while (ptr->next != NULL)                                          // loop till pointer is at the last node
     {
         ptr = ptr->next;
     }
-    newNode->next = NULL;
-    ptr->next = newNode;
+    newNode->next = NULL; // new node points to NULL
+    ptr->next = newNode;  // point the last node to new node which in turn becomes the last node;
     traverse(newNode);
     return head;
 }
 
 struct Node *insertInBetween(struct Node *head, int data, int index)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    struct Node *ptr = head;
-    int i = 0;
-    while (i != index - 1)
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node)); // initialize new node
+    struct Node *ptr = head;                                           // pointer points to head ( first node )
+    int i = 0;                                                         // i for traversing till given index
+    while (i != index - 1)                                             // loop till pointer comes to the node just after which new node has to be inserted
     {
         ptr = ptr->next;
         i++;
     }
-    newNode->data = data;
-    newNode->next = ptr->next;
-    ptr->next = newNode;
+    newNode->data = data;      // give data to new node
+    newNode->next = ptr->next; // point new node to node that ptr (node before new node) is pointing to
+    ptr->next = newNode;       // point ptr to new node
     traverse(newNode);
     return head;
 }
 
 struct Node *insertAfter(struct Node *head, struct Node *prevNode, int data)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = prevNode->next;
-    prevNode->next = newNode;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node)); // initialize new node
+    newNode->data = data;                                              // give data to new node
+    newNode->next = prevNode->next;                                    // point new node to what its previous node was pointing to
+    prevNode->next = newNode;                                          // point previous node to new node
     traverse(newNode);
     return head;
 }
@@ -128,62 +128,60 @@ struct Node *deleteFirst(struct Node *head)
 {
     if (head != NULL)
     {
-        struct Node *tempPointer = head;
-        head = head->next;
-        free(tempPointer);
-        return head;
+        printf("\nList Empty");
     }
     else
     {
-        printf("\nList Empty");
+        struct Node *tempPointer = head; // pointer to first node
+        head = head->next;               // move first node to the next
+        free(tempPointer);               // free pointer to first node , and now the new head is the first node
+        return head;
     }
-
-    return head;
 }
 
 struct Node *deleteEnd(struct Node *head)
 {
-    struct Node *tempPointer = head;
-    struct Node *tempPointer2 = head->next;
-    while (tempPointer2->next != NULL)
+    struct Node *tempPointer = head;        // pointer (A) to first node
+    struct Node *tempPointer2 = head->next; // pointer (B) to second node
+    while (tempPointer2->next != NULL)      // loop till B points to NULL
     {
         tempPointer = tempPointer->next;
         tempPointer2 = tempPointer2->next;
     }
-    tempPointer->next = NULL;
-    free(tempPointer2);
+    tempPointer->next = NULL; // point A to NULL
+    free(tempPointer2);       // delete B
 
     return head;
 }
 
 struct Node *deleteAtIndex(struct Node *head, int index)
 {
-    struct Node *tempPointer = head;
-    struct Node *tempPointer2 = head->next;
-    for (int i = 0; i < index - 1; i++)
+    struct Node *tempPointer = head;        // pointer (A) to first node
+    struct Node *tempPointer2 = head->next; // pointer (B) to second node
+    for (int i = 0; i < index - 1; i++)     // loop till B is at the node that is to be deleted and A is at its previous node
     {
         tempPointer = tempPointer->next;
         tempPointer2 = tempPointer2->next;
     }
-    tempPointer->next = tempPointer2->next;
-    free(tempPointer2);
+    tempPointer->next = tempPointer2->next; // point A to what B was pointing at
+    free(tempPointer2);                     // delete B
 
     return head;
 }
 
 struct Node *deleteAtValue(struct Node *head, int value)
 {
-    struct Node *tempPointer = head;
-    struct Node *tempPointer2 = head->next;
-    while (tempPointer2->data != value && tempPointer2->next != NULL)
+    struct Node *tempPointer = head;                                  // pointer (A) to first node
+    struct Node *tempPointer2 = head->next;                           // pointer (B) to second node
+    while (tempPointer2->data != value && tempPointer2->next != NULL) // loop till B has the given value and B does not point to NULL
     {
         tempPointer = tempPointer->next;
         tempPointer2 = tempPointer2->next;
     }
-    if (tempPointer2->data == value)
+    if (tempPointer2->data == value) // if B has the given value,
     {
-        tempPointer->next = tempPointer2->next;
-        free(tempPointer2);
+        tempPointer->next = tempPointer2->next; // point A to where B was pointing
+        free(tempPointer2);                     // delete B
     }
     return head;
 }
