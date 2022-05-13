@@ -73,7 +73,7 @@ int match(char a, char b) // function for matching closing brackets
 
 int checkParanthesis(char *exp)
 {
-    // initializing new stack
+    // initializing new stack to store paranthesis
     struct stack *s;
     s->size = 50;
     s->top = -1;

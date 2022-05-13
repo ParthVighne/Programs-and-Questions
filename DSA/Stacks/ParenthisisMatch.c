@@ -59,13 +59,13 @@ void pop(struct stack *ptr) // pop element from stack
 
 int checkParanthesis(char *exp) // parenthesis check
 {
-    // creating an array to store paranthesis
+    // creating a stack to store paranthesis
     struct stack *s;
     s->size = 100;
     s->top = -1;
     s->arr = (char *)malloc(s->size * sizeof(char));
 
-    for (int i = 0; exp[i] != '\0'; i++) // loop till end of array
+    for (int i = 0; exp[i] != '\0'; i++) // loop till end of expression
     {
         if (exp[i] == '(') // if open paranthesis -> push
         {

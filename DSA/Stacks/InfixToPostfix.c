@@ -65,7 +65,7 @@ int precedence(char ch)
 
 int isOperator(char ch)
 {
-    if (ch == '*' || ch == '/' || ch == '+' || ch == '-')
+    if (ch == '*' || ch == '/' || ch == '+' || ch == '-') // if one of these operators ,then return true (1)
         return 1;
     else
         return 0;
@@ -73,31 +73,34 @@ int isOperator(char ch)
 
 char *InfixToPostfix(char *infix)
 {
+    // initializing stack to store operators
     struct stack *s = (struct stack *)malloc(sizeof(struct stack));
     s->size = 80;
     s->top = -1;
     s->arr = (char *)malloc(s->size * sizeof(char));
 
+    // initializing a postfix string to store final postfix expression
     char *postfix = (char *)malloc((strlen(infix) + 1) * sizeof(char));
+
     int i = 0; // Track infix traversal
     int j = 0; // Track postfix addition
 
-    while (infix[i] != '\0')
+    while (infix[i] != '\0') // run till infix expression ends
     {
-        if (!isOperator(infix[i]))
+        if (!isOperator(infix[i])) // if element is not an operator , copy it to postfix
         {
             postfix[j] = infix[i];
             i++;
             j++;
         }
-        else
+        else // if element is an operator
         {
-            if (precedence(infix[i]) > precedence(stackTop(s)))
+            if (precedence(infix[i]) > precedence(stackTop(s))) // if precedence of operator in infix is greater than the one at the top of the stack , push it to the stack
             {
                 push(s, infix[i]);
                 i++;
             }
-            else
+            else // else pop the stack and transfer the element to postfix
             {
                 postfix[j] = pop(s);
                 j++;
@@ -105,12 +108,13 @@ char *InfixToPostfix(char *infix)
         }
     }
 
+    // to copy rest of elements to postfix
     while (!isEmpty(s))
     {
         postfix[j] = pop(s);
         j++;
     }
-    postfix[j] = '\0';
+    postfix[j] = '\0'; // ending postfix string
     return postfix;
 }
 
