@@ -73,7 +73,7 @@ void Enqueue(struct queue *q, int value)
         if (q->front == -1)
             q->front = 0;
 
-        q->rear = (q->rear + 1) % q->size;
+        q->rear++;
         q->arr[q->rear] = value;
         printf("\nEnqueue : %d", value);
     }
@@ -97,7 +97,7 @@ void display(struct queue *q)
     while (i <= q->rear)
     {
         printf("%d ", q->arr[i]);
-        i = (i + 1) % q->size;
+        i++;
     }
     printf("\n- - - - - - - - - - - - - \n");
 }
