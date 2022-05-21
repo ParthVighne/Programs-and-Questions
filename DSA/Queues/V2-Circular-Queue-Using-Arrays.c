@@ -73,6 +73,24 @@ void display(struct circularQueue *q)
     printf("\n- - - - - - - - - - - - \n");
 }
 
+void queueFront(struct circularQueue *q)
+{
+    printf("\nFront : %d", q->arr[q->front]);
+}
+
+void queueRear(struct circularQueue *q)
+{
+    printf("\nRear : %d", q->arr[q->rear]);
+}
+
+void seek(struct circularQueue *q, int position)
+{
+    if (position < q->front && position > q->rear)
+        printf("\nInvalid Position");
+    else
+        printf("\nSeek : %d", q->arr[position]);
+}
+
 int main()
 {
     struct circularQueue *q = (struct circularQueue *)malloc(sizeof(struct circularQueue));
