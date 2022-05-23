@@ -31,17 +31,10 @@ void Enqueue(struct circularQueue *q, int value)
         printf("\nQueue Overflow");
     else
     {
-        if (q->front == -1 && q->rear == -1)
-        {
+        if (q->front == -1)
             q->front = 0;
-            q->rear = (q->rear + 1) % q->size;
-            q->arr[q->rear] = value;
-        }
-        else
-        {
-            q->rear = (q->rear + 1) % q->size;
-            q->arr[q->rear] = value;
-        }
+        q->rear = (q->rear + 1) % q->size;
+        q->arr[q->rear] = value;
     }
 }
 

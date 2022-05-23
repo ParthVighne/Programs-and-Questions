@@ -29,14 +29,10 @@ void Enqueue(struct queue *q, int value)
 {
     if (isFull(q))
         printf("\nQueue Overflow");
-    else if (q->front == -1)
-    {
-        q->front = 0;
-        q->rear++;
-        q->arr[q->rear] = value;
-    }
     else
     {
+        if (q->front == -1)
+            q->front = 0;
         q->rear++;
         q->arr[q->rear] = value;
     }

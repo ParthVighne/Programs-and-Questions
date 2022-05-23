@@ -5,7 +5,11 @@
     "ostream": "cpp",
     "TestProject.C": "cpp",
     "new": "cpp",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "array": "c",
+    "string_view": "c",
+    "initializer_list": "c",
+    "utility": "c"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
