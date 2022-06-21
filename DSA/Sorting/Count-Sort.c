@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <limits.h>
 
@@ -63,6 +64,69 @@ int main()
     int n = 7;
     display(A, n);
     countSort(A, n);
+    display(A, n);
+    return 0;
+}
+*/
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+
+void display(int *A, int n)
+{
+    printf("\n- - - - - \n");
+    for (int i = 0; i < n; i++)
+        printf("%d ", A[i]);
+    printf("\n");
+}
+
+int maximum(int A[], int n)
+{
+    int max = INT_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        if (A[i] > max)
+            max = A[i];
+    }
+    return max;
+}
+
+void countSort(int A[], int n)
+{
+    int i, j;
+
+    int max = maximum(A, n);
+
+    int *count = (int *)malloc((max + 1) * sizeof(int));
+
+    for (i = 0; i <= max; i++)
+        count[i] = 0;
+
+    for (i = 0; i < n; i++)
+        count[A[i]]++;
+
+    i = 0;
+    j = 0;
+
+    while (i <= max)
+    {
+        if (count[i] > 0)
+        {
+            A[j] = i;
+            count[i]--;
+            j++;
+        }
+        else
+            i++;
+    }
+}
+
+int main()
+{
+    int A[] = {56, 22, 1, 78, 34, 2, 6, 7, 13, 59};
+    int n = sizeof(A) / sizeof(A[0]);
+    display(A, n);
+    countSort(A, n - 1);
     display(A, n);
     return 0;
 }
