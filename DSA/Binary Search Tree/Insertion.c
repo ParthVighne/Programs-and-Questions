@@ -29,6 +29,36 @@ struct node *search(struct node *root, int key)
         return search(root->right, key);
 }
 
+struct node *IterSearch(struct node *root, int key)
+{
+    while (root != NULL)
+    {
+        if (root->data == key)
+            return root;
+        else if (root->data > key)
+            root = root->left;
+        else
+            root = root->right;
+    }
+    return NULL;
+}
+
+int isBST(struct node *root)
+{
+    static struct node *prev = NULL;
+    if (root != NULL)
+    {
+        if (!isBST(root->left))
+            return 0;
+        if (prev != NULL && root->data <= prev->data)
+            return 0;
+        prev = root;
+        return isBST(root->right);
+    }
+    else
+        return 1;
+}
+
 void inOrder(struct node *root)
 {
     if (root != NULL)
