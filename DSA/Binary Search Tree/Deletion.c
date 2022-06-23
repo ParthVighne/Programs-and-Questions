@@ -110,7 +110,7 @@ void insert(struct node *root, int key)
         prev->right = new;
 }
 
-struct node *inOrederPredecessor(struct node *root)
+struct node *inOrderPredecessor(struct node *root)
 {
     root = root->left;
     while (root->right != NULL)
@@ -135,7 +135,7 @@ struct node *delete (struct node *root, int value)
         root->right = delete (root->right, value);
     else
     {
-        iPre = inOrederPredecessor(root);
+        iPre = inOrderPredecessor(root);
         root->data = iPre->data;
         root->left = delete (root->left, iPre->data);
     }
