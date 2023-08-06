@@ -6,8 +6,8 @@ int main()
     printf("\nEnter number :");
     scanf("%d", &number);
     if (number % 2 == 0)
-        printf("Prime");
-    else
         printf("Not Prime");
+    else
+        printf("Prime");
     return 0;
 }
